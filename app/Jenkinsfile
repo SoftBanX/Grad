@@ -1,9 +1,14 @@
 pipeline {
      agent any
      stages {
-          stage("Checkout") {
+          stage("Compile") {
                steps {
-                    git url: 'https://github.com/SoftBanX/Grad.git'
+                    sh "./gradlew compileJava"
+               }
+          }
+          stage("Unit test") {
+               steps {
+                    sh "./gradlew test"
                }
           }
      }
