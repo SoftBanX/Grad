@@ -4,7 +4,7 @@ pipeline {
           stage("Compile") {
                steps {
                     checkout scm
-                    sh "./app/gradlew compileJava"
+                    sh "./app/gradlew build"
                }
           }
           stage("Unit test") {
