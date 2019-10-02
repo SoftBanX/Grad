@@ -10,6 +10,7 @@ pipeline {
           stage("Unit test") {
                steps {
                     checkout scm
+                    sh "cd app"
                     sh "./app/gradlew test"
                }
           }
